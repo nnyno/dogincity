@@ -7,7 +7,7 @@ public class SceneChange : MonoBehaviour
 {
     public void gamestrat()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
 }
