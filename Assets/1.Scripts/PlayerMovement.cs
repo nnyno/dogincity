@@ -5,8 +5,10 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public ParticleSystem eatEffect;
-    //public bool playeffect = true;
+    public AudioSource mySfx;
+    public AudioClip eatSfx;
+    public AudioClip barkSfx;
+
     public GameObject eatEffect;
 
     public CameraMovement cameraMovement;
@@ -194,8 +196,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if(_controller.isGrounded && Input.GetButtonDown("eat") && bites == true)
         {
+            EatSound();
             eatEffect.SetActive(true);
-            // playeffect = true;
+ 
             stops = true;
             bites = false;
             _animator.SetTrigger("doEat");
@@ -432,5 +435,15 @@ public class PlayerMovement : MonoBehaviour
         {
             layernum = 1;
         }
+    }
+
+    public void EatSound()
+    {
+        mySfx.PlayOneShot(eatSfx);
+    }
+
+    public void BarkSound()
+    {
+        mySfx.PlayOneShot(barkSfx);
     }
 }
