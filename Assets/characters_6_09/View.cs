@@ -27,11 +27,11 @@ public class View : MonoBehaviour
             
             if(t_angle < m_angle * 0.5f)
             {
-                if(Physics.Raycast(transform.position, t_direction, out RaycastHit t_hit, m_distance))
+                if(Physics.Raycast(transform.position, transform.forward, out RaycastHit t_hit, m_distance)) //2값: t_direction
                 {   //플레이어의 이름을 Player로 맞춰줘야함.
                     if (t_hit.transform.name == "Corgi_RM")
                     {
-                        Debug.DrawRay(transform.position, t_direction * m_distance, Color.red);
+                        //Debug.DrawRay(transform.position, transform.forward, Color.red); //t_direction * m_distance
                         m_enemy.SetTarget(t_tfPlayer);////////
                         transform.LookAt(t_tfPlayer);//player 바라보기
                         transform.position = Vector3.Lerp(transform.position, t_hit.transform.position, 0.005f);
