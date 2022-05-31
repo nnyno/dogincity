@@ -211,8 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a540d431c41132d498d833e39268b3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appleImage: {fileID: 0}
-  bananaImage: {fileID: 0}
+  mySfx: {fileID: 0}
+  eatSfx: {fileID: 0}
+  barkSfx: {fileID: 0}
+  eatEffect: {fileID: 0}
   cameraMovement: {fileID: 0}
   corgicollder: {fileID: 0}
   hungerController: {fileID: 0}
@@ -223,30 +225,25 @@ MonoBehaviour:
   - {fileID: 5041715671201202075}
   - {fileID: 5041715671201202075}
   - {fileID: 5041715671201202075}
-  hasfood: 000000
+  putdownfood: []
+  Images: []
   CreatePoint: {fileID: 5041715671094781738}
-  putdownapple: {fileID: 1115220350795312617, guid: 57bb29356d8d27f4183cd2ad193a1296,
-    type: 3}
-  putdownbanana: {fileID: 2934249069451111043, guid: 694dc6286a6d2e64ba5c47ec720cf01e,
-    type: 3}
   speed: 20
   runSpeed: 35
   finalSpeed: 0
   toggleCameraRotation: 0
   run: 0
-  gravity: 0
-  jumpSpeed: 20
-  downSpeed: 0.5
   transformHeightLimit: 0
   jumpHeightLimit: 3
-  jumpTimeLimit: 2
-  jumptime: 0
   jumpPower: 100
+  jumptime: 0
+  jumpSpeed: 20
   jumping: 0
   jumpVelocity: 0
   smoothness: 10
   percent: 0
   fpercent: 0
+  spercent: 0
   stops: 0
   bites: 0
   foodIndexs: -1
@@ -254,7 +251,7 @@ MonoBehaviour:
   IRandom: 0
   isDelay: 0
   delayTime: 8.4
-  layerno: 1
+  layernum: 1
 --- !u!114 &5041715670087250624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,8 +1944,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5041715670409849006}
-  m_LocalRotation: {x: -0, y: 1.8189892e-12, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.09989975, z: 0.0014999283}
+  m_LocalRotation: {x: -0.000000029802319, y: 1.8189892e-12, z: -1.8189892e-12, w: 1}
+  m_LocalPosition: {x: 0, y: 0.09989966, z: 0.0014998985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5041715670787489575}
@@ -2084,6 +2081,9 @@ MonoBehaviour:
   nearObject: {fileID: 0}
   nearfood: 0
   park: 0
+  market: 0
+  printflyers: 0
+  home: 0
 --- !u!1 &5041715670787489594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,8 +2109,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5041715670787489594}
-  m_LocalRotation: {x: 0.000017742124, y: 0.708463, z: 0.70574796, w: -0.000017816154}
-  m_LocalPosition: {x: 0, y: -0.060020443, z: 0.032056272}
+  m_LocalRotation: {x: 0.000017742126, y: 0.708463, z: 0.70574796, w: -0.000017816157}
+  m_LocalPosition: {x: 0, y: 0.0071002375, z: 0.033500064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5041715670409849001}

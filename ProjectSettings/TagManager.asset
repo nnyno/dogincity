@@ -34,6 +34,11 @@ TagManager:
   - FxTemporaire
   - Effect
   - waypoint
+  - man
+  - trash
+  - trashbox
+  - land
+  - trashbag
   layers:
   - Default
   - TransparentFX

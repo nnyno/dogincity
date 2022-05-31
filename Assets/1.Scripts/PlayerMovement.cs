@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpVelocity;
 
-
     public float smoothness = 10f;
 
     public float percent;
@@ -168,14 +167,14 @@ public class PlayerMovement : MonoBehaviour
     
     void bite()
     {
-        if(_controller.isGrounded && Input.GetButtonDown("bite") && nearObject != null && bites == false)
+        if(_controller.isGrounded && Input.GetButtonDown("bite") && nearObject != null && bites == false && foodIndexs == -1)
         {
             stops = true;
             bites = true;
             _animator.SetTrigger("doBite");
             _animator.SetLayerWeight(1, 1f);
         }
-        else if(_controller.isGrounded && Input.GetButtonDown("bite") && nearObject == null && bites == false)
+        else if(_controller.isGrounded && Input.GetButtonDown("bite") && nearObject == null && bites == false && foodIndexs == -1)
         {
             stops = true;
             _animator.SetTrigger("doBite");
@@ -184,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
 
     void putdown()
     {
-        if(_controller.isGrounded && Input.GetButtonDown("putdown") && bites == true)
+        if(_controller.isGrounded && bites == true && Input.GetButtonDown("bite") && foodIndexs != -1)
         {
             stops = true;
             bites = false;
@@ -212,8 +211,12 @@ public class PlayerMovement : MonoBehaviour
         {
             stops = true;
             _animator.SetTrigger("doBark");
+            if(bites == true)
+            {
+                bites = false;
+                putdown2();
+            }
         }
-
     }
 
     void jump()
