@@ -179,6 +179,11 @@ public class PlayerMovement : MonoBehaviour
             stops = true;
             _animator.SetTrigger("doBite");
         }
+        else if(bites == true && foodIndexs == -1)
+        {
+            bites = false;
+            _animator.SetLayerWeight(1, 0f);
+        }
     }
 
     void putdown()
