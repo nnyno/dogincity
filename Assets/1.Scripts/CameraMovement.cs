@@ -100,10 +100,9 @@ public class CameraMovement : MonoBehaviour
         {
             if(Input.GetButtonDown("bite") || Input.GetButtonDown("bark") || Input.GetButtonDown("Jump"))
             {
-                clampAngle = 0;
+                //clampAngle = 0;
             }
         }
-
     }
 
     void stops()

@@ -329,7 +329,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-
+                //중력, 하강애니메이션
             }
 
 
