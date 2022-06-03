@@ -12,8 +12,9 @@ public class HealthController : MonoBehaviour
 
     public Image[] Front;
 
-    private void Start()
+    private void Update()
     {
+        UpdateHealth();
     }
 
     public void UpdateHealth()

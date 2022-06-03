@@ -12,9 +12,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject eatEffect;
 
     public CameraMovement cameraMovement;
-    public Corgicollder corgicollder;
+    public Corgicollder corgicollder = null;
     public HungerController hungerController;
-    GameObject nearObject;
+    public HealthController hp = null;
+    public GameObject nearObject;
     public int nearfood;
     public GameObject[] food;
     public GameObject[] putdownfood;
@@ -38,10 +39,12 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField]
     public float jumpPower;
-    public float jumptime, jumpSpeed;
+    public float jumpSpeed;
     public bool jumping = false;
 
+
     public float jumpVelocity;
+    public float gravity = 1.0f;
 
     public float smoothness = 10f;
 
@@ -72,7 +75,6 @@ public class PlayerMovement : MonoBehaviour
         _camera = Camera.main;
         _controller = this.GetComponent<CharacterController>();
         cameraMovement = GameObject.Find("Cameras").GetComponent<CameraMovement>();
-        corgicollder = GameObject.Find("CorgiCollder").GetComponent<Corgicollder>();
         hungerController = GameObject.Find("Corgi_RM").GetComponent<HungerController>();
     }
 
@@ -143,26 +145,41 @@ public class PlayerMovement : MonoBehaviour
         if(nearObject != null)
         {
             foodIndexs = nearfood - 1;
-            food[foodIndexs].SetActive(true);
+            food[foodIndexs + 20].SetActive(true);
             Destroy(nearObject);
         }
     }
 
     void putdown2()
     {
-        food[foodIndexs].SetActive(false);
-        Instantiate(putdownfood[foodIndexs], CreatePoint.transform.position, Quaternion.identity);
-        _animator.SetLayerWeight(1, 0f);
-        foodIndexs = -1;
+        if(corgicollder.badfoods == true)
+        {
+            corgicollder.badfoods = false;
+            food[foodIndexs].SetActive(false);
+            Instantiate(putdownfood[foodIndexs + 20], CreatePoint.transform.position, Quaternion.identity);
+            _animator.SetLayerWeight(1, 0f);
+            foodIndexs = -1;
+        }
+        else if(corgicollder.badfoods == false)
+        {
+            food[foodIndexs].SetActive(false);
+            Instantiate(putdownfood[foodIndexs], CreatePoint.transform.position, Quaternion.identity);
+            _animator.SetLayerWeight(1, 0f);
+            foodIndexs = -1;
+        }
     }
 
     void eat2()
     {
-        // playeffect = false;
         eatEffect.SetActive(false);
         food[foodIndexs].SetActive(false);
         _animator.SetLayerWeight(1, 0f);
         foodIndexs = -1;
+        if(corgicollder.badfoods == true)
+        {
+            corgicollder.badfoods = false;
+            hp.PlayerHealth -= 1;
+        }
     }
     
     void bite()
@@ -319,7 +336,6 @@ public class PlayerMovement : MonoBehaviour
 
                 if(Input.GetButtonDown("Jump") && !jumping)
                 {
-                    jumptime += Time.deltaTime * jumpSpeed * 3;
                     jumping = true;
                     if(cameraMovement.ch == false)
                     {
@@ -330,17 +346,19 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 //중력, 하강애니메이션
+                if(!jumping)
+                {
+                    moveDirection.y -= gravity;
+                }
             }
 
 
             if(jumping)
             {
-                jumptime -= Time.deltaTime * jumpSpeed;
-                jumptime = Mathf.Clamp(jumptime, 0.1f, 2.0f);
                 jumpVelocity = Mathf.Lerp(transform.position.y, transformHeightLimit, Time.deltaTime * jumpPower);
-                moveDirection.y += jumpVelocity;
+                moveDirection.y = jumpVelocity;
 
-                if(transform.position.y >= transformHeightLimit || jumptime<=0.1f)
+                if(transform.position.y >= transformHeightLimit)
                 {
                     jumping = false;
                     transformHeightLimit = 0.0f;
@@ -370,7 +388,15 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetFloat("Blend", percent, 0.1f, Time.deltaTime);
             _animator.SetFloat("LR", spercent, 0.1f, Time.deltaTime);
 
-            _controller.Move(moveDirection * finalSpeed * Time.deltaTime);
+            
+            if(jumping == true)
+            {
+                _controller.Move(moveDirection * 15 * Time.deltaTime);
+            }
+            else
+            {
+                _controller.Move(moveDirection * finalSpeed * Time.deltaTime);
+            }
         }
 
     }

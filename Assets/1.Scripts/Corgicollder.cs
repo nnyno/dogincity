@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Corgicollder : MonoBehaviour
 {
+    public PlayerMovement pm = null;
     public GameObject nearObject;
     public int nearfood;
     public bool park = false;
     public bool market = false;
     public bool printflyers = false;
     public bool home = false;
+    public bool badfoods = false;
 
     void OnTriggerStay(Collider other) 
     {
@@ -26,17 +28,17 @@ public class Corgicollder : MonoBehaviour
         }
         else if(other.tag == "bread")
         {
-            nearfood = 3;
+            nearfood = 14;
             nearObject = other.gameObject;
         }
         else if(other.tag == "pepper")
         {
-            nearfood = 4;
+            nearfood = 13;
             nearObject = other.gameObject;
         }
         else if(other.tag == "leek")
         {
-            nearfood = 5;
+            nearfood = 8;
             nearObject = other.gameObject;
         }
         else if(other.tag == "melon")
@@ -51,7 +53,7 @@ public class Corgicollder : MonoBehaviour
         }
         else if(other.tag == "tomato")
         {
-            nearfood = 8;
+            nearfood = 5;
             nearObject = other.gameObject;
         }
         else if(other.tag == "asparagus")
@@ -76,12 +78,12 @@ public class Corgicollder : MonoBehaviour
         }
         else if(other.tag == "orange")
         {
-            nearfood = 13;
+            nearfood = 4;
             nearObject = other.gameObject;
         }
         else if(other.tag == "artichoke")
         {
-            nearfood = 14;
+            nearfood = 3;
             nearObject = other.gameObject;
         }
         else if(other.tag == "perry")
@@ -129,6 +131,14 @@ public class Corgicollder : MonoBehaviour
         else if(other.tag == "home")
         {
             home = true;
+        }
+        else if(other.tag == "badfood")
+        {
+            nearObject = other.gameObject;
+            if(Input.GetButtonDown("bite") && nearObject != null && pm.bites == false && pm.foodIndexs == -1)
+            {
+                badfoods = true;
+            }
         }
     }
 

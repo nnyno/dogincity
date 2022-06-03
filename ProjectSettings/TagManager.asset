@@ -39,6 +39,7 @@ TagManager:
   - trashbox
   - land
   - trashbag
+  - badfood
   layers:
   - Default
   - TransparentFX
