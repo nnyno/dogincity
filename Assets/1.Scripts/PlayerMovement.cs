@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpPower;
     public float jumpSpeed;
     public bool jumping = false;
+    public bool landing = true;
 
 
     public float jumpVelocity;
@@ -49,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
     public float smoothness = 10f;
 
     public float percent;
-    public float fpercent;
     public float spercent;
 
     public bool stops = false;
@@ -144,9 +144,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if(nearObject != null)
         {
-            foodIndexs = nearfood - 1;
-            food[foodIndexs + 20].SetActive(true);
-            Destroy(nearObject);
+
+            if(corgicollder.badfoods == true)
+            {
+                foodIndexs = nearfood - 1;
+                food[foodIndexs + 20].SetActive(true);
+                Destroy(nearObject);
+            }
+            else if(corgicollder.badfoods == false)
+            {
+                foodIndexs = nearfood - 1;
+                food[foodIndexs].SetActive(true);
+                Destroy(nearObject);
+        }
         }
     }
 
@@ -274,20 +284,17 @@ public class PlayerMovement : MonoBehaviour
 
                 if(v < 0)
                 {
-                    fpercent = 0.0f;
+                    IdleRandom = 2.02f;
                     finalSpeed = finalSpeed / 3;
                 }
                 else if(v == 0)
                 {
-                    fpercent = 0.0f;
+                    IdleRandom = 2.02f;
                 }
                 else
                 {
-                    fpercent = ((run) ? 1 : 0.5f) * moveDirection.magnitude;
+                    IdleRandom = ((run) ? 3 : 2.5f) * moveDirection.magnitude;
                 }
-
-                _animator.SetFloat("MoveSpeed", fpercent, 0.1f, Time.deltaTime);
-
             }
             else
             {
@@ -337,9 +344,19 @@ public class PlayerMovement : MonoBehaviour
                 if(Input.GetButtonDown("Jump") && !jumping)
                 {
                     jumping = true;
+                    landing = false;
                     if(cameraMovement.ch == false)
                     {
                         _animator.SetTrigger("doJump");
+                    }
+                }
+
+                if(landing == false)
+                {
+                    if(_controller.isGrounded)
+                    {
+                        landing = true;
+                        _animator.SetTrigger("dolanding");
                     }
                 }
             }
@@ -349,6 +366,8 @@ public class PlayerMovement : MonoBehaviour
                 if(!jumping)
                 {
                     moveDirection.y -= gravity;
+                    _animator.SetTrigger("isJump");
+                    
                 }
             }
 
@@ -377,10 +396,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     IdleRandom = UnityEngine.Random.Range(1.0f, 2.0f);
                 }
-                else if(cameraMovement.ch == true)
-                {
-                    IdleRandom = 1f;
-                }
+
                 StartCoroutine(idleRan());
             }
 
