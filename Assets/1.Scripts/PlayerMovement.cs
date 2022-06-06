@@ -360,7 +360,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-            else
+            else if(!_controller.isGrounded)
             {
                 //중력, 하강애니메이션
                 if(!jumping)
