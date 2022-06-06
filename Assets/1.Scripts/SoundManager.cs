@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [System.Serializable]
@@ -11,6 +12,17 @@ public class Sound{
 
 public class SoundManager : MonoBehaviour
 {
+    [SerializeField] Image soundOn;
+    [SerializeField] Image soundOff;
+    private bool muted = false;
+    
+
+
+
+
+
+
+
     // public static SoundManager instance;
 
     [Header("사운드 등록")]
@@ -25,6 +37,17 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
+        if(!PlayerPrefs.HasKey("muted"))
+        {
+            PlayerPrefs.SetInt("muted", 0);
+            Load();
+        }
+        else
+        {
+            Load();
+        }
+
+
         // instance = this;
         PlayRandomBGM();
     }
@@ -55,5 +78,52 @@ public class SoundManager : MonoBehaviour
         int random = Random.Range(0, 2);
         bgmPlayer.clip = bgmSounds[random].clip;
         bgmPlayer.Play();
+    }
+
+
+
+
+
+    public void OnButtonPress()
+    {
+        if(muted == false)
+        {
+            muted = true;
+            AudioListener.pause = true;
+        }
+
+        else
+        {
+            muted = false;
+            AudioListener.pause = false;
+        }
+
+        Save();
+        UpdateButtonIcon();
+        AudioListener.pause = muted;
+    }
+
+    private void Load()
+    {
+        muted = PlayerPrefs.GetInt("muted") == 1;
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetInt("muted", muted ? 1 : 0);
+    }
+
+    private void UpdateButtonIcon()
+    {
+        if(muted == false)
+        {
+            soundOn.enabled = true;
+            soundOff.enabled = false;
+        }
+        else
+        {
+            soundOn.enabled = false;
+            soundOff.enabled = true;
+        }
     }
 }
