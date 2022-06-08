@@ -7,8 +7,9 @@ public class caught : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "enemy")
         {
+            Debug.Log("1");
             LoadingSceneManager.LoadScene("Interface");
         }
 

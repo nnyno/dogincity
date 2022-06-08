@@ -49,6 +49,7 @@ TagManager:
   - jumping
   - Simple_Door
   - home
+  - enemy
   layers:
   - Default
   - TransparentFX

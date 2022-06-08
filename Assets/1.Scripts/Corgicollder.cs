@@ -171,7 +171,7 @@ public class Corgicollder : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if(other.tag == "food" && other.tag == "badfood")
+        if(other.tag == "food" || other.tag == "badfood")
         {
             nearfood = 0;
             nearObject = null;
@@ -187,6 +187,14 @@ public class Corgicollder : MonoBehaviour
         else if(other.tag == "printflyers")
         {
             printflyers = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "enemy")
+        {
+            LoadingSceneManager.LoadScene("Interface");
         }
     }
 }
