@@ -25,7 +25,7 @@ public class AiAnim : MonoBehaviour
             agent.speed = 0f;
             difficulty.surprise = false;
         }
-        _animator.SetFloat("Blend", agent.speed + 0.2f * 0.1f, 0.1f, Time.deltaTime);
+        _animator.SetFloat("Blend", agent.speed, 0.1f, Time.deltaTime);
     }
 
     public void humango()
