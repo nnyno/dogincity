@@ -231,6 +231,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(_controller.isGrounded && Input.GetButtonDown("bark"))
         {
+            BarkSound();
             stops = true;
             _animator.SetTrigger("doBark");
             if(bites == true)
