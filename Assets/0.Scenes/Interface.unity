@@ -615,7 +615,7 @@ PrefabInstance:
     - target: {fileID: 4347635444632925583, guid: 968d9e7730be9b045a3b2672aa6de9bc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: gamestrat
+      value: gohome
       objectReference: {fileID: 0}
     - target: {fileID: 4347635444632925583, guid: 968d9e7730be9b045a3b2672aa6de9bc,
         type: 3}

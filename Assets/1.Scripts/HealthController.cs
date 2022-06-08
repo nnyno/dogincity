@@ -66,7 +66,7 @@ public class HealthController : MonoBehaviour
         {
             if(PlayerHealth == 0)
             {
-                SceneManager.LoadScene(0);
+                LoadingSceneManager.LoadScene("interface");
             } 
         }
 

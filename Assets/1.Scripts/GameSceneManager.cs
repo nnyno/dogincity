@@ -22,7 +22,7 @@ public class GameSceneManager : MonoBehaviour
     {
         if(hungerController.Hunger == 0)
         {
-            SceneManager.LoadScene(0);
+            LoadingSceneManager.LoadScene("interface");
         } 
     }
 }

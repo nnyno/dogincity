@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    public void gamestrat()
+    public void gohome()
     {
-        SceneManager.LoadScene(0);
+        LoadingSceneManager.LoadScene("home");
     }
-
 }
