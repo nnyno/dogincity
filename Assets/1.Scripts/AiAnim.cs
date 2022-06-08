@@ -6,11 +6,13 @@ using UnityEngine.AI;
 public class AiAnim : MonoBehaviour
 {
     public difficulty difficulty = null;
+    public Questmanager Questmanager;
     public NavMeshAgent agent;
     Animator _animator;
 
     void Start()
     {
+        Questmanager = GameObject.Find("Questmanager").GetComponent<Questmanager>();
         _animator = this.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
@@ -28,6 +30,14 @@ public class AiAnim : MonoBehaviour
 
     public void humango()
     {
+        if(Questmanager.count == 1 || Questmanager.count == 2)
+        {
+            Questmanager.count++;
+        }
+        else if(Questmanager.count == 3)
+        {
+            Questmanager.countquest();
+        }
         agent.speed = 3.5f;
     }
 }

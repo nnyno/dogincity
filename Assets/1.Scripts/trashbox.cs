@@ -7,6 +7,7 @@ public class trashbox : MonoBehaviour
     public difficulty difficulty = null;
     public GameObject[] trashfood;
     public int trashfoodIndexs = 0;
+    public int trashran = 0;
     public GameObject CreatePoint;
 
 
@@ -14,9 +15,13 @@ public class trashbox : MonoBehaviour
     {
         if(other.tag == "land")
         {
-            trashfoodIndexs =  UnityEngine.Random.Range(0, 5);
+            trashran =  UnityEngine.Random.Range(0, 5);
+            if(trashran == 4)
+            {
+                trashfoodIndexs =  UnityEngine.Random.Range(0, 5);
+                Instantiate(trashfood[trashfoodIndexs], CreatePoint.transform.position, Quaternion.identity);
+            }
             difficulty.difscore += 0.2f;
-            Instantiate(trashfood[trashfoodIndexs], CreatePoint.transform.position, Quaternion.identity);
         }
     }
 }

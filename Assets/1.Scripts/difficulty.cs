@@ -45,7 +45,7 @@ public class difficulty : MonoBehaviour
         {
             if(Input.GetButtonDown("bite") &&  playerMovement.stops == false && playerMovement.foodIndexs == -1)
             {
-                difscore += 0.2f;
+                difscore += 0.02f;
             }
         }
     }
@@ -63,7 +63,7 @@ public class difficulty : MonoBehaviour
         }
         else if(other.tag == "food")
         {
-            difscore += 0.01f;
+            difscore += 0.001f;
         }
         else if(other.tag == "trashbox")
         {
