@@ -46,6 +46,7 @@ TagManager:
   - badtomato
   - badfood
   - market
+  - jumping
   layers:
   - Default
   - TransparentFX

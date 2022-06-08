@@ -119,6 +119,7 @@ public class Corgicollder : MonoBehaviour
         else if(other.tag == "park")
         {
             park = true;
+            pm.jumpPower = 13.0f;
         }
         else if(other.tag == "market")
         {
@@ -161,6 +162,10 @@ public class Corgicollder : MonoBehaviour
             nearfood = 25;
             nearObject = other.gameObject;
             badfoods = true;
+        }
+        else if(other.tag == "jumping")
+        {
+            pm.jumpPower = 13.0f;
         }
     }
 

@@ -8,7 +8,7 @@ public class AiAnim : MonoBehaviour
     public difficulty difficulty = null;
     public Questmanager Questmanager;
     public NavMeshAgent agent;
-    Animator _animator;
+    public Animator _animator;
 
     void Start()
     {

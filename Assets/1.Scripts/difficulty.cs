@@ -17,7 +17,7 @@ public class difficulty : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
