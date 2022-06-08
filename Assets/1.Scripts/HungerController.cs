@@ -21,7 +21,7 @@ public class HungerController : MonoBehaviour
     void Update()
     {
         HungerSlider.value = Hunger;
-        Hunger -= 1f * Time.deltaTime;
+        Hunger -= 0.05f * Time.deltaTime;
         if(Hunger <= 0)
         {
             Hunger = 0;

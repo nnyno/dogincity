@@ -15,6 +15,7 @@ public class AiAnim : MonoBehaviour
         Questmanager = GameObject.Find("Questmanager").GetComponent<Questmanager>();
         _animator = this.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = 1.8f;
     }
 
     void Update()
@@ -25,7 +26,7 @@ public class AiAnim : MonoBehaviour
             agent.speed = 0f;
             difficulty.surprise = false;
         }
-        _animator.SetFloat("Blend", agent.speed, 0.1f, Time.deltaTime);
+        _animator.SetFloat("Blend", agent.speed * 0.1f + 0.1f, 0.1f, Time.deltaTime);
     }
 
     public void humango()
@@ -38,6 +39,6 @@ public class AiAnim : MonoBehaviour
         {
             Questmanager.countquest();
         }
-        agent.speed = 3.5f;
+        agent.speed = 1.8f;
     }
 }

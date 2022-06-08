@@ -45,6 +45,7 @@ TagManager:
   - badorange
   - badtomato
   - badfood
+  - market
   layers:
   - Default
   - TransparentFX
@@ -61,7 +62,7 @@ TagManager:
   - food
   - bitefood
   - Enemy
-  - 
+  - market
   - 
   - 
   - 
