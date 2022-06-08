@@ -420,52 +420,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if(foodIndexs == -1)
         {
-            Images[0].SetActive(false);
-            Images[1].SetActive(false);
-            //Images[2].SetActive(false);
-            //Images[3].SetActive(false);
-            //Images[4].SetActive(false);
+            for(int x = 0; x <= 24; x++)
+            {
+                Images[x].SetActive(false);
+            }
         }
-        else if(foodIndexs == 0)
+
+        for(int y = 0; y <= 24; y++)
         {
-            Images[foodIndexs].SetActive(true);
-            Images[1].SetActive(false);
-            //Images[2].SetActive(false);
-            //Images[3].SetActive(false);
-            //Images[4].SetActive(false);
+            if(foodIndexs == y)
+            {
+                for(int x = 0; x <= 24; x++)
+                {
+                    Images[x].SetActive(false);
+                }
+                Images[foodIndexs].SetActive(true);
+            }
         }
-        else if(foodIndexs == 1)
-        {
-            Images[foodIndexs].SetActive(true);
-            Images[0].SetActive(false);
-            //Images[2].SetActive(false);
-            //Images[3].SetActive(false);
-            //Images[4].SetActive(false);
-        }
-        /*else if(foodIndexs == 2)
-        {
-            Images[foodIndexs].SetActive(true);
-            Images[0].SetActive(false);
-            Images[1].SetActive(false);
-            Images[3].SetActive(false);
-            Images[4].SetActive(false);
-        }
-        else if(foodIndexs == 3)
-        {
-            Images[foodIndexs].SetActive(true);
-            Images[0].SetActive(false);
-            Images[1].SetActive(false);
-            Images[2].SetActive(false);
-            Images[4].SetActive(false);
-        }
-        else if(foodIndexs == 4)
-        {
-            Images[foodIndexs].SetActive(true);
-            Images[0].SetActive(false);
-            Images[1].SetActive(false);
-            Images[2].SetActive(false);
-            Images[3].SetActive(false);
-        }*/
     }
 
     public void HeadOnOff()
