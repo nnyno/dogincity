@@ -23,9 +23,10 @@ public class AiAnim : MonoBehaviour
     {
         if(difficulty.surprise == true)
         {
-            _animator.SetTrigger("surprised");
+            Debug.Log("1");
             agent.speed = 0f;
             difficulty.surprise = false;
+            _animator.SetTrigger("surprised");
         }
         _animator.SetFloat("Blend", agent.speed * 0.1f + 0.1f, 0.1f, Time.deltaTime);
     }

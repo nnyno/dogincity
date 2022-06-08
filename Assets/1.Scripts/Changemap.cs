@@ -16,14 +16,5 @@ public class Changemap : MonoBehaviour
             LoadingSceneManager.LoadScene("SampleScene");
         }
     }
-
-    void Update()
-    {
-        if(stress.Stress == 0)
-        {
-            LoadingSceneManager.LoadScene("Interface");
-        }   
-    }
-
 }
 

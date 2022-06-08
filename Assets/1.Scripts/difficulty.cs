@@ -38,7 +38,6 @@ public class difficulty : MonoBehaviour
     {
         if(other.tag == "man")
         {
-            Debug.Log("A");
             if(playerMovement.stops == false && playerMovement.foodIndexs == -1 && Input.GetButtonDown("bark"))
             {
                 Debug.Log("b");
@@ -73,6 +72,10 @@ public class difficulty : MonoBehaviour
         else if(other.tag == "trashbox")
         {
             difscore += 0.05f;
+        }
+        else if(other.tag == "home")
+        {
+            LoadingSceneManager.LoadScene("Interface");
         }
     }
 }
