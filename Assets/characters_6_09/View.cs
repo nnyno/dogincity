@@ -27,6 +27,21 @@ public class View : MonoBehaviour
             
             if(t_angle < m_angle * 0.5f)
             {
+                
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position + transform.forward, t_direction, out hit, m_distance))
+                {
+                    if (hit.transform.tag == "Player")
+                    {
+                        Debug.DrawRay(transform.position + transform.up, t_direction, Color.red);
+                        m_enemy.SetTarget(t_tfPlayer);////////
+                        transform.LookAt(t_tfPlayer);//player 바라보기
+                        transform.position = Vector3.Lerp(transform.position, t_tfPlayer.position, 0.005f);
+                        colli.waypoints = true;
+                    }
+                }
+                
+                /*
                 if(Physics.Raycast(transform.position, transform.forward, out RaycastHit t_hit, m_distance)) //2값: t_direction
                 {   //플레이어의 이름을 Player로 맞춰줘야함.
                     if (t_hit.transform.name == "Corgi_RM")
@@ -38,6 +53,8 @@ public class View : MonoBehaviour
                         colli.waypoints = true;
                     }
                 }
+                */
+                
             }
         }
         else
