@@ -13,6 +13,7 @@ public class Questmanager : MonoBehaviour
     public int count = 0;
     public int questdelayTime = 1;
     public bool questdelay = false;
+    public BoxCollider home;
 
     void Start()
     {
@@ -49,9 +50,10 @@ public class Questmanager : MonoBehaviour
         {
             questtext1.text = "시장 직원을 피해 도망다니면서 음식을 2개이상 먹으세요(" + (count - 20) + "/2)";
         }
-        else if(count == 7)
+        else if(count == 7 &&  stress.Stress == 0.0f)
         {
             questtext1.text = "집으로 돌아가세요!";
+            home.enabled = false;
         }
     }
 

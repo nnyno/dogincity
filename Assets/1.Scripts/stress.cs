@@ -20,6 +20,14 @@ public class stress : MonoBehaviour
     {
         StressSlider.value = Stress;
         stressaim();
+        if(Stress >= 100f)
+        {
+            Stress = 100f;
+        }
+        else if(Stress <= 0f)
+        {
+            Stress = 0f;
+        }
     }
 
     void stressaim()

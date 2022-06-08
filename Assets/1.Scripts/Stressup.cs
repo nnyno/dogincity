@@ -9,8 +9,8 @@ public class Stressup : MonoBehaviour
 
     void Update()
     {
-        stress.Stress += Time.deltaTime;
-        if(stress.Stress == 100)
+        stress.Stress += Time.deltaTime*5f;
+        if(stress.Stress >= 100)
         {
             door.enabled = true;
         }

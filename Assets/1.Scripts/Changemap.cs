@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Changemap : MonoBehaviour
 {
+    public stress stress = null;
 
     void OnTriggerEnter(Collider collider)
     {
@@ -14,6 +15,14 @@ public class Changemap : MonoBehaviour
         {
             LoadingSceneManager.LoadScene("SampleScene");
         }
+    }
+
+    void Update()
+    {
+        if(stress.Stress == 0)
+        {
+            LoadingSceneManager.LoadScene("Interface");
+        }   
     }
 
 }

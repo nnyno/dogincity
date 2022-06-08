@@ -47,6 +47,8 @@ TagManager:
   - badfood
   - market
   - jumping
+  - Simple_Door
+  - home
   layers:
   - Default
   - TransparentFX

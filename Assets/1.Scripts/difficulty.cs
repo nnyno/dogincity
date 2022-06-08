@@ -36,10 +36,15 @@ public class difficulty : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.tag == "man" && playerMovement.stops == false && playerMovement.foodIndexs == -1 && Input.GetButtonDown("bark"))
+        if(other.tag == "man")
         {
-            surprise = true;
-            difscore += 0.05f;
+            Debug.Log("A");
+            if(playerMovement.stops == false && playerMovement.foodIndexs == -1 && Input.GetButtonDown("bark"))
+            {
+                Debug.Log("b");
+                surprise = true;
+                difscore += 0.05f;
+            }
         }
         else if(other.tag == "food")
         {
