@@ -1328,7 +1328,7 @@ ModelImporter:
       name: Arm_Dog|Fall_land
       takeName: Arm_Dog|Fall_land
       internalID: 0
-      firstFrame: 0
+      firstFrame: 6.1
       lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
