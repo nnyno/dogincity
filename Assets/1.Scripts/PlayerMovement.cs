@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     public CameraMovement cameraMovement;
     public Corgicollder corgicollder = null;
+    public stress stress = null;
     public HungerController hungerController;
     public HealthController hp = null;
     public GameObject nearObject;
@@ -231,6 +232,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(_controller.isGrounded && Input.GetButtonDown("bark"))
         {
+            stress.Stress -= 5.0f;
             stops = true;
             _animator.SetTrigger("doBark");
             if(bites == true)

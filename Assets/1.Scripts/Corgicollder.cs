@@ -119,7 +119,7 @@ public class Corgicollder : MonoBehaviour
         else if(other.tag == "park")
         {
             park = true;
-            pm.jumpPower = 13.0f;
+            pm.jumpPower = 7.0f;
         }
         else if(other.tag == "market")
         {
@@ -165,7 +165,7 @@ public class Corgicollder : MonoBehaviour
         }
         else if(other.tag == "jumping")
         {
-            pm.jumpPower = 13.0f;
+            pm.jumpPower = 7.0f;
         }
     }
 

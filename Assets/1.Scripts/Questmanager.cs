@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class Questmanager : MonoBehaviour
 {
-    public Text questtext1, questtext2;
-    public int count = 0;
+    public stress stress = null;
+    public difficulty difficulty = null;
     public PlayerMovement PlayerMovement;
     public Corgicollder Corgicollder;
-    public difficulty difficulty = null;
+    public Text questtext1, questtext2;
+    public int count = 0;
     public int questdelayTime = 1;
     public bool questdelay = false;
 
@@ -59,10 +60,12 @@ public class Questmanager : MonoBehaviour
         if(Corgicollder.park == true && count == 0)
         {
             countquest();
+            stress.Stress -= 5.0f;
         }
         //1,2,3 aianim의 humango함수에서 증가
         else if (Corgicollder.market == true && count == 4)
         {
+            stress.Stress -= 5.0f;
             countquest();
         }
         else if (Corgicollder.market == true && PlayerMovement.foodIndexs != -1 && Input.GetKeyDown(KeyCode.X))
@@ -73,6 +76,7 @@ public class Questmanager : MonoBehaviour
             }
             else if(count == 6)
             {
+                stress.Stress -= 10.0f;
                 countquest();
             }
         }

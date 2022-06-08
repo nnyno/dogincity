@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class AiAnim : MonoBehaviour
 {
     public difficulty difficulty = null;
+    public stress stress = null;
     public Questmanager Questmanager;
     public NavMeshAgent agent;
     public Animator _animator;
@@ -37,6 +38,7 @@ public class AiAnim : MonoBehaviour
         }
         else if(Questmanager.count == 3)
         {
+            stress.Stress -= 5.0f;
             Questmanager.countquest();
         }
         agent.speed = 1.8f;

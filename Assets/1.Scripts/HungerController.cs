@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HungerController : MonoBehaviour
 {
+    public stress stress = null;
     public Slider HungerSlider;
     Animator _animator;
     public float Hunger;
@@ -37,6 +38,11 @@ public class HungerController : MonoBehaviour
     void eat3()
     {
         Hunger += 20;
+        stress.Stress -= 5.0f;
+        if(stress.Stress <= 0)
+        {
+            stress.Stress = 0;
+        }
 
         if(Hunger >= 100)
         {
