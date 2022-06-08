@@ -39,6 +39,11 @@ TagManager:
   - trashbox
   - land
   - trashbag
+  - badapple
+  - badbanana
+  - badartichoke
+  - badorange
+  - badtomato
   - badfood
   layers:
   - Default

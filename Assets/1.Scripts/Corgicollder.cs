@@ -132,19 +132,41 @@ public class Corgicollder : MonoBehaviour
         {
             home = true;
         }
-        else if(other.tag == "badfood")
+        else if(other.tag == "badapple")
         {
+            nearfood = 21;
             nearObject = other.gameObject;
-            if(Input.GetButtonDown("bite") && nearObject != null && pm.bites == false && pm.foodIndexs == -1)
-            {
-                badfoods = true;
-            }
+            badfoods = true;
+        }
+        else if(other.tag == "badbanana")
+        {
+            nearfood = 22;
+            nearObject = other.gameObject;
+            badfoods = true;
+        }
+        else if(other.tag == "badartichoke")
+        {
+            nearfood = 23;
+            nearObject = other.gameObject;
+            badfoods = true;
+        }
+        else if(other.tag == "badorange")
+        {
+            nearfood = 24;
+            nearObject = other.gameObject;
+            badfoods = true;
+        }
+        else if(other.tag == "badtomato")
+        {
+            nearfood = 25;
+            nearObject = other.gameObject;
+            badfoods = true;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if(other.tag == "food")
+        if(other.tag == "food" && other.tag == "badfood")
         {
             nearfood = 0;
             nearObject = null;

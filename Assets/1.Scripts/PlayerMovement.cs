@@ -144,19 +144,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if(nearObject != null)
         {
-
-            if(corgicollder.badfoods == true)
-            {
-                foodIndexs = nearfood - 1;
-                food[foodIndexs + 20].SetActive(true);
-                Destroy(nearObject);
-            }
-            else if(corgicollder.badfoods == false)
-            {
-                foodIndexs = nearfood - 1;
-                food[foodIndexs].SetActive(true);
-                Destroy(nearObject);
-        }
+            foodIndexs = nearfood - 1;
+            food[foodIndexs].SetActive(true);
+            Destroy(nearObject);
         }
     }
 
@@ -166,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
         {
             corgicollder.badfoods = false;
             food[foodIndexs].SetActive(false);
-            Instantiate(putdownfood[foodIndexs + 20], CreatePoint.transform.position, Quaternion.identity);
+            Instantiate(putdownfood[foodIndexs], CreatePoint.transform.position, Quaternion.identity);
             _animator.SetLayerWeight(1, 0f);
             foodIndexs = -1;
         }
