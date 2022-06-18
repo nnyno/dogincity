@@ -19,7 +19,6 @@ public class stress : MonoBehaviour
     void Update()
     {
         StressSlider.value = Stress;
-        stressaim();
         if(Stress >= 100f)
         {
             Stress = 100f;
@@ -28,10 +27,5 @@ public class stress : MonoBehaviour
         {
             Stress = 0f;
         }
-    }
-
-    void stressaim()
-    {
-        _animator.SetLayerWeight(3, 1.0f - maxStress/100.0f);
     }
 }

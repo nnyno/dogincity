@@ -5,7 +5,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField]
-    private GameObject cam1, cam2;
+    public PlayerMovement playermovement = null;
+    public GameObject cam1, cam2;
     public bool ch = false;
 
     public Transform objectTofollow;
@@ -47,13 +48,32 @@ public class CameraMovement : MonoBehaviour
     {
         CamChanges();
         anims();
-        rotX -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
-        rotY += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
 
-        rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
-        Quaternion rot = Quaternion.Euler(rotX, rotY, 0);
-        transform.rotation = rot;
-        cam2.transform.rotation = rot;
+        if(!playermovement.stops && playermovement.landing == true && playermovement.jumping == false)
+        {
+            if(cam1.activeSelf == true)
+            {
+                rotX -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+                rotY += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+
+                rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+                Quaternion rot = Quaternion.Euler(rotX, rotY, 0);
+                clampAngle = 20f;
+                transform.rotation = rot;
+                
+            }
+            else
+            {
+                rotX -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+                rotY += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+
+                rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+                Quaternion rot = Quaternion.Euler(rotX, rotY, 0);
+                clampAngle = 40f;
+                transform.rotation = rot;
+                cam2.transform.rotation = rot;
+            }
+        }
     }
 
     void LateUpdate()
@@ -81,36 +101,41 @@ public class CameraMovement : MonoBehaviour
             {
                 cam1.SetActive(false);
                 cam2.SetActive(true);
-                clampAngle = 40f;
                 ch = true;
             }
             else
             {
                 cam1.SetActive(true);
                 cam2.SetActive(false);
-                clampAngle = 20f;
                 ch = false;
             }
         }
     }
-
+    
     void anims()
     {
         if(cam2.activeSelf == true)
         {
-            if(Input.GetButtonDown("bite") || Input.GetButtonDown("bark") || Input.GetButtonDown("Jump"))
+            if(playermovement._controller.isGrounded && !playermovement.stops)
             {
-                //clampAngle = 0;
+                if(Input.GetButtonDown("bite") || Input.GetButtonDown("bark") || Input.GetButtonDown("Jump"))
+                {
+                    if(cam2.activeSelf == true)
+                    {
+                        clampAngle = 0f;
+                        Quaternion rot = Quaternion.Euler(0, 0, 0);
+                        transform.rotation = rot; 
+                    }
+                    else
+                    {
+                        clampAngle = 0f;
+                        Quaternion rot = Quaternion.Euler(0, 0, 0);
+                        transform.rotation = rot; 
+                    }
+                }
             }
         }
     }
 
-    void stops()
-    {
-        if(cam2.activeSelf == true)
-        {
-            clampAngle = 40f;
-        }
-    }
     
 }

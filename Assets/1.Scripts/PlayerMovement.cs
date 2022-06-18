@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     Camera _camera;
     Animator _animator;
-    CharacterController _controller;
+    public CharacterController _controller;
     [Range(0, 50)]
     public float speed = 5f;
     public float runSpeed = 8f;
@@ -337,7 +337,6 @@ public class PlayerMovement : MonoBehaviour
                 if(Input.GetButtonDown("Jump") && !jumping)
                 {
                     jumping = true;
-                    landing = false;
                     if(cameraMovement.ch == false)
                     {
                         _animator.SetTrigger("doJump");
@@ -346,11 +345,8 @@ public class PlayerMovement : MonoBehaviour
 
                 if(landing == false)
                 {
-                    if(_controller.isGrounded)
-                    {
-                        landing = true;
-                        _animator.SetTrigger("dolanding");
-                    }
+                    landing = true;
+                    _animator.SetTrigger("dolanding");
                 }
             }
             else if(!_controller.isGrounded)
@@ -367,6 +363,7 @@ public class PlayerMovement : MonoBehaviour
 
             if(jumping)
             {
+                landing = false;
                 jumpVelocity = Mathf.Lerp(transform.position.y, transformHeightLimit, Time.deltaTime * jumpPower);
                 moveDirection.y = jumpVelocity;
 
