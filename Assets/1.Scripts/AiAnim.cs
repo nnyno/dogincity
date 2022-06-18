@@ -21,17 +21,10 @@ public class AiAnim : MonoBehaviour
 
     void Update()
     {
-        if(difficulty.surprise == true)
-        {
-            Debug.Log("1");
-            agent.speed = 0f;
-            difficulty.surprise = false;
-            _animator.SetTrigger("surprised");
-        }
         _animator.SetFloat("Blend", agent.speed * 0.1f + 0.1f, 0.1f, Time.deltaTime);
     }
 
-    public void humango()
+    public void quest()
     {
         if(Questmanager.count == 1 || Questmanager.count == 2)
         {
@@ -42,6 +35,6 @@ public class AiAnim : MonoBehaviour
             stress.Stress -= 5.0f;
             Questmanager.countquest();
         }
-        agent.speed = 1.8f;
+        difficulty.surprise = false;
     }
 }
