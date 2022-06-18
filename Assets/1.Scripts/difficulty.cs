@@ -40,7 +40,6 @@ public class difficulty : MonoBehaviour
         {
             if(playerMovement.stops == false && playerMovement.foodIndexs == -1 && Input.GetButtonDown("bark"))
             {
-                Debug.Log("b");
                 surprise = true;
                 difscore += 0.05f;
             }

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class AiAnim : MonoBehaviour
 {
+    public corgiround corgiround = null;
     public difficulty difficulty = null;
     public stress stress = null;
     public Questmanager Questmanager;
@@ -24,8 +25,9 @@ public class AiAnim : MonoBehaviour
         _animator.SetFloat("Blend", agent.speed * 0.1f + 0.1f, 0.1f, Time.deltaTime);
     }
 
-    public void quest()
+    public void humango()
     {
+        print("z");
         if(Questmanager.count == 1 || Questmanager.count == 2)
         {
             Questmanager.count++;
@@ -35,6 +37,10 @@ public class AiAnim : MonoBehaviour
             stress.Stress -= 5.0f;
             Questmanager.countquest();
         }
-        difficulty.surprise = false;
+
+        for(int i = 0; i < corgiround.peopleList.Count; i++)
+        {
+            corgiround.agent[i].speed = 1.8f;
+        }
     }
 }

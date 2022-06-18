@@ -20,15 +20,9 @@ public class corgiround : MonoBehaviour
         {
             for(int i = 0; i < peopleList.Count; i++)
             {
-                agent[i].speed = 0f;
+                difficulty.surprise = false;
+                agent[i].speed = 0.0f;
                 _animator[i].SetTrigger("surprised");
-            }
-        }
-        else
-        {
-            for(int i = 0; i < peopleList.Count; i++)
-            {
-                agent[i].speed = 1.8f;
             }
         }
     }
