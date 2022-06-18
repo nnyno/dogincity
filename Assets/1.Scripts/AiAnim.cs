@@ -5,16 +5,18 @@ using UnityEngine.AI;
 
 public class AiAnim : MonoBehaviour
 {
-    public corgiround corgiround = null;
+    public corgiround corgiround;
     public difficulty difficulty = null;
-    public stress stress = null;
+    public stress stress;
     public Questmanager Questmanager;
     public NavMeshAgent agent;
     public Animator _animator;
 
     void Start()
     {
+        corgiround = GameObject.Find("CorgiCollder").GetComponent<corgiround>();
         Questmanager = GameObject.Find("Questmanager").GetComponent<Questmanager>();
+        stress = GameObject.Find("Corgi_RM").GetComponent<stress>();
         _animator = this.GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.speed = 1.8f;
@@ -27,7 +29,7 @@ public class AiAnim : MonoBehaviour
 
     public void humango()
     {
-        print("z");
+        Debug.Log("abcd");
         if(Questmanager.count == 1 || Questmanager.count == 2)
         {
             Questmanager.count++;
