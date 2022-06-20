@@ -9,6 +9,13 @@ public class Sight : MonoBehaviour
     [SerializeField] LayerMask m_layerMask = 0;//타겟의 레이어검출
     [SerializeField] EnemyAI m_enemy = null;
     public colli colli = null;
+    public float catcherspeed = 0.005f;
+    public difficulty diff;
+
+    void Start()
+    {
+        diff = GameObject.Find("CorgiCollder").GetComponent<difficulty>();
+    }
 
     void View()
     {
@@ -26,12 +33,12 @@ public class Sight : MonoBehaviour
             if (distance < 15) //** Player와 Enemy 사이의 거리가 15보다 작아졌을때 "추적시작"
             {
                 Vector3 N_vectorBetween = vectorBetween.normalized;
-                float view=Vector3.Dot(N_vectorBetween, transform.forward);
+                float view = Vector3.Dot(N_vectorBetween, transform.forward);
                 if(view > 0.4)
                 {
                     m_enemy.SetTarget(t_tfPlayer);////////
                     transform.LookAt(t_tfPlayer);//player 바라보기
-                    transform.position = Vector3.Lerp(transform.position, t_tfPlayer.position, 0.01f);
+                    transform.position = Vector3.Lerp(transform.position, t_tfPlayer.position, catcherspeed);
                     colli.waypoints = true;
                 }
             }
@@ -45,5 +52,25 @@ public class Sight : MonoBehaviour
     void Update()
     {
         View();
+        if(diff.score == 1)
+        {
+            catcherspeed = 0.01f;
+        }
+        else if(diff.score == 2)
+        {
+            catcherspeed = 0.02f;
+        }
+        else if(diff.score == 3)
+        {
+            catcherspeed = 0.03f;
+        }
+        else if(diff.score == 4)
+        {
+            catcherspeed = 0.35f;
+        }
+        else if(diff.score == 5)
+        {
+            catcherspeed = 0.045f;
+        }
     }
 }
