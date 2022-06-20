@@ -13,7 +13,7 @@ public class Questmanager : MonoBehaviour
     public int count = 0;
     public int questdelayTime = 1;
     public bool questdelay = false;
-    public BoxCollider home;
+    public BoxCollider home, home2;
 
     void Start()
     {
@@ -54,6 +54,7 @@ public class Questmanager : MonoBehaviour
         {
             questtext1.text = "집으로 돌아가세요!";
             home.enabled = false;
+            home2.enabled = false;
         }
     }
 
