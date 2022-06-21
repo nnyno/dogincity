@@ -194,7 +194,7 @@ public class Corgicollder : MonoBehaviour
     {
         if(other.tag == "enemy")
         {
-            LoadingSceneManager.LoadScene("Interface");
+            LoadingSceneManager.LoadScene("gmaeover");
         }
     }
 }
