@@ -8,6 +8,7 @@ public class Stressup : MonoBehaviour
     public BoxCollider doorbox;
     public bool up = false;
     public Animator dooranim;
+    public GameObject wall;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class Stressup : MonoBehaviour
         {
             doorbox.enabled = true;
             dooranim.enabled = true;
+            Destroy(wall);
         }
     }
 
