@@ -34,11 +34,16 @@ public class PauseMenu : MonoBehaviour
         CameraMovement.enabled = false;
     }
 
+    public void mp()
+    {
+        Maualmenu.SetActive(true);
+    }
+
     public void Maualstart()
     {
         Maualmenu.SetActive(false);
-        //Time.timeScale = 1f;
-        CameraMovement.enabled = false;
+        Time.timeScale = 1f;
+        CameraMovement.enabled = true;
     }
 
     public void Resume()
