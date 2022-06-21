@@ -348,7 +348,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 230.90985
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -710,7 +710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 494, y: 362}
+  m_AnchoredPosition: {x: -579, y: 387}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837805036
@@ -2665,8 +2665,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035, y: 270}
-  m_SizeDelta: {x: 19200, y: 5400}
+  m_AnchoredPosition: {x: 0.000061035, y: 370.5}
+  m_SizeDelta: {x: 19200, y: 3725.5732}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135929179
 MonoBehaviour:
@@ -2754,7 +2754,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -14.950074}
   m_textInfo:
     textComponent: {fileID: 2135929179}
     characterCount: 15
