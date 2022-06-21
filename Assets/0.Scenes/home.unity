@@ -976,6 +976,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &394244805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100088, guid: 120136543af42b24e8c4674e198a70fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1227069502}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &394244807
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394244805}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 923f442216df3da409cc2a2f741fbb1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &402281812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000011080368560, guid: 120136543af42b24e8c4674e198a70fb,
@@ -1174,8 +1199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stress: {fileID: 665306983}
-  door: {fileID: 1604476907}
+  doorbox: {fileID: 1604476907}
   up: 0
+  dooranim: {fileID: 394244807}
 --- !u!114 &665306983
 MonoBehaviour:
   m_ObjectHideFlags: 0

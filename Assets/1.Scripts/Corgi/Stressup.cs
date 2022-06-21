@@ -5,8 +5,9 @@ using UnityEngine;
 public class Stressup : MonoBehaviour
 {
     public stress stress = null;
-    public BoxCollider door;
+    public BoxCollider doorbox;
     public bool up = false;
+    public Animator dooranim;
 
     void Start()
     {
@@ -20,7 +21,8 @@ public class Stressup : MonoBehaviour
         }   
         if(stress.Stress >= 100)
         {
-            door.enabled = true;
+            doorbox.enabled = true;
+            dooranim.enabled = true;
         }
     }
 

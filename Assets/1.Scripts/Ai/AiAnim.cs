@@ -29,7 +29,6 @@ public class AiAnim : MonoBehaviour
 
     public void humango()
     {
-        Debug.Log("abcd");
         if(Questmanager.count == 1 || Questmanager.count == 2)
         {
             Questmanager.count++;

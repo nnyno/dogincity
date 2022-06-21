@@ -26,6 +26,7 @@ public class homemove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _animator.SetLayerWeight(3, 0.9f);
         InputMovement();
         Vector3 playerRotate = Vector3.Scale(_camera.transform.forward, new Vector3(1,0,1));
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerRotate), Time.deltaTime * smoothness);
@@ -53,7 +54,7 @@ public class homemove : MonoBehaviour
         }
         else
         {
-            percent = moveDirection.magnitude;
+            percent = 0.5f;
         }
 
         if(h > 0)
