@@ -50,6 +50,7 @@ TagManager:
   - Simple_Door
   - home
   - enemy
+  - trafficlights
   layers:
   - Default
   - TransparentFX
