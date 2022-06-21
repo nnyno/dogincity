@@ -85,7 +85,7 @@ public class Questmanager : MonoBehaviour
         }
         else if(Corgicollder.home == true && count == 7)
         {
-            LoadingSceneManager.LoadScene("home");
+            LoadingSceneManager.LoadScene("gameend");
         }
     }
 
