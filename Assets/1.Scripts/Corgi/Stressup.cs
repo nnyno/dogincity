@@ -6,13 +6,26 @@ public class Stressup : MonoBehaviour
 {
     public stress stress = null;
     public BoxCollider door;
+    public bool up = false;
 
+    void Start()
+    {
+        Invoke("stressup", 26);
+    }
     void Update()
     {
-        stress.Stress += Time.deltaTime*5f;
+        if(up == true)
+        {
+            stress.Stress += Time.deltaTime*5f;
+        }   
         if(stress.Stress >= 100)
         {
             door.enabled = true;
         }
+    }
+
+    void stressup()
+    {
+        up = true;
     }
 }
