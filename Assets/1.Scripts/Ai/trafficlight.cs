@@ -8,7 +8,7 @@ public class trafficlight : MonoBehaviour
     public bool redlight = true;
     public bool isDelay = false;
     public BoxCollider box;
-    //public GameObject greenlights, redlights;
+    public GameObject[] greenlights, redlights;
 
     void Update()
     {
@@ -27,15 +27,22 @@ public class trafficlight : MonoBehaviour
         {
             redlight = false;
             box.enabled = false;
-            // greenlights.SetActive(true);
-            // redlights.SetActive(false);
+            for(int i = 0; i <= 1; i++)
+            {
+                greenlights[i].SetActive(true);
+                redlights[i].SetActive(false);
+            }
+            
         }
         else
         {
             redlight = true;
             box.enabled = true;
-            // greenlights.SetActive(false);
-            // redlights.SetActive(true);
+            for(int i = 0; i <= 1; i++)
+            {
+                greenlights[i].SetActive(false);
+                redlights[i].SetActive(true);
+            }
         }
     }
 }
