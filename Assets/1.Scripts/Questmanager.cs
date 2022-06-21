@@ -48,7 +48,7 @@ public class Questmanager : MonoBehaviour
         }
         else if(count == 5 || count == 6)
         {
-            questtext1.text = "시장 직원을 피해 도망다니면서 음식을 2개이상 먹으세요(" + (count - 20) + "/2)";
+            questtext1.text = "시장 직원을 피해 도망다니면서" + "음식을 2개이상 먹으세요(" + (count - 5) + "/2)";
         }
         else if(count == 7 &&  stress.Stress == 0.0f)
         {
