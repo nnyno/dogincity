@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0.Scenes/cutscenes/gmaeover.unity
     guid: f19b82afb95ea6845a38e98b6542a1c3
+  - enabled: 1
+    path: Assets/0.Scenes/cutscenes/gameend.unity
+    guid: aeafe5d6c0a73464c867db0a73544c0b
   m_configObjects: {}
