@@ -12,6 +12,7 @@ public class corgiround : MonoBehaviour
 
     void Start()
     {
+        
     }
 
     void Update()
