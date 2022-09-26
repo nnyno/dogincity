@@ -480,5 +480,7 @@ MonoBehaviour:
   - {fileID: 5787748056720042471, guid: f55b8ba5b419dbb4fa08da1f09c8c603, type: 3}
   - {fileID: 4742677154014660025, guid: b375b9049e9073e469ba6237659d5cb3, type: 3}
   - {fileID: 6559429067316052213, guid: dd20c74d0f2a507419dc363f3271df77, type: 3}
+  - {fileID: 7738055528566204062, guid: 37462f14c7ad7da4d99fd4439b79ce21, type: 3}
   trashfoodIndexs: -1
+  trashran: 0
   CreatePoint: {fileID: 4288582590055299236}

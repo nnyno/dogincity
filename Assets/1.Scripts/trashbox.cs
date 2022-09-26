@@ -22,6 +22,10 @@ public class trashbox : MonoBehaviour
                 Instantiate(trashfood[trashfoodIndexs], CreatePoint.transform.position, Quaternion.identity);
             }
             difficulty.difscore += 0.2f;
+            if(UnityEngine.Random.Range(0, 2) == 1)
+            {
+                Instantiate(trashfood[5], CreatePoint.transform.position, Quaternion.identity);
+            }
         }
     }
 }
