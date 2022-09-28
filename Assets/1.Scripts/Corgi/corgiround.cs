@@ -9,6 +9,9 @@ public class corgiround : MonoBehaviour
     public List<GameObject> peopleList = new List<GameObject>();
     public List<NavMeshAgent> agent = new List<NavMeshAgent>();
     public List<Animator> _animator = new List<Animator>();
+    public Vector3 createmap;
+    public GameObject maps;
+    public int permap, mapcount = 0;
 
     void Start()
     {
@@ -24,8 +27,23 @@ public class corgiround : MonoBehaviour
                 difficulty.surprise = false;
                 agent[i].speed = 0.0f;
                 _animator[i].SetTrigger("surprised");
+                permap = Random.Range(0, 25);
+                if(permap == 0)
+                {
+                    if(mapcount == 0)
+                    {
+                        createmap = peopleList[i].transform.TransformPoint(new Vector3(0.3f, 1.0f, 0.25f));
+                        Invoke("instantiatemap", 0.4f);
+                        mapcount++;
+                    }
+                }
             }
         }
+    }
+
+    void instantiatemap()
+    {
+        Instantiate(maps, createmap, Quaternion.identity);
     }
 
     void OnTriggerEnter(Collider other)
