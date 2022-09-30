@@ -167,6 +167,11 @@ public class Corgicollder : MonoBehaviour
         {
             pm.jumpPower = 7.0f;
         }
+        else if(other.tag == "maps")
+        {
+            nearfood = 26;
+            nearObject = other.gameObject;
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -187,6 +192,11 @@ public class Corgicollder : MonoBehaviour
         else if(other.tag == "printflyers")
         {
             printflyers = false;
+        }
+        else if(other.tag == "maps")
+        {
+            nearfood = 0;
+            nearObject = null;
         }
     }
 

@@ -51,6 +51,7 @@ TagManager:
   - home
   - enemy
   - trafficlights
+  - maps
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,7 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject[] putdownfood;
     public GameObject[] Images;
     public GameObject CreatePoint;
+    public Text mapscounts;
 
+    public int mapscount = 0;
 
     Camera _camera;
     Animator _animator;
@@ -112,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
         {
             run = false;
         }
+        mapscounts.text = mapscount + " / 9";
     }
 
     void LateUpdate()
@@ -145,9 +149,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if(nearObject != null)
         {
-            foodIndexs = nearfood - 1;
-            food[foodIndexs].SetActive(true);
-            Destroy(nearObject);
+            if(nearfood != 26)
+            {
+                foodIndexs = nearfood - 1;
+                food[foodIndexs].SetActive(true);
+                Destroy(nearObject);
+            }
+            else
+            {
+                Destroy(nearObject);
+                corgicollder.nearfood = 0;
+                mapscount++;
+            }        
         }
     }
 
@@ -187,10 +200,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if(_controller.isGrounded && Input.GetButtonDown("bite") && nearObject != null && bites == false && foodIndexs == -1)
         {
-            stops = true;
-            bites = true;
-            _animator.SetTrigger("doBite");
-            _animator.SetLayerWeight(1, 1f);
+            if(nearfood != 26)
+            {
+                stops = true;
+                bites = true;
+                _animator.SetTrigger("doBite");
+                _animator.SetLayerWeight(1, 1f);
+            }
+            else
+            {
+                stops = true;
+                _animator.SetTrigger("doBite");
+            }
         }
         else if(_controller.isGrounded && Input.GetButtonDown("bite") && nearObject == null && bites == false && foodIndexs == -1)
         {
