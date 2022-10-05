@@ -16,6 +16,10 @@ public class Stressup : MonoBehaviour
     }
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            up = true;
+        }
         if(up == true)
         {
             stress.Stress += Time.deltaTime*5f;

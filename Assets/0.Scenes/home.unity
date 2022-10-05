@@ -1743,6 +1743,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _introCutscene: {fileID: 1815418551}
+  obj1: {fileID: 0}
+  obj2: {fileID: 0}
+  su: {fileID: 665306982}
 --- !u!4 &1006762883
 Transform:
   m_ObjectHideFlags: 0

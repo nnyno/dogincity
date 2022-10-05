@@ -15,6 +15,7 @@ public class Controller : MonoBehaviour
         cnt = UnityEngine.Random.Range(0, 4);
         _animator = clone[cnt].GetComponent<Animator>();
         maps[cnt].SetActive(true);
+        _animator.SetLayerWeight(1, 1f);
 
         _animator.SetTrigger("New Trigger");
 
