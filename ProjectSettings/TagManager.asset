@@ -52,6 +52,7 @@ TagManager:
   - enemy
   - trafficlights
   - maps
+  - dog
   layers:
   - Default
   - TransparentFX

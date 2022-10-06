@@ -67,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float layernum = 1f;
 
+    public bool atc = false;
+
 
     
 
@@ -126,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
             bark();
             putdown();
             eat();
+            attack();
         }
 
         if(toggleCameraRotation != true)
@@ -193,6 +196,16 @@ public class PlayerMovement : MonoBehaviour
         {
             corgicollder.badfoods = false;
             hp.PlayerHealth -= 1;
+        }
+    }
+    
+    void attack()
+    {
+        if(_controller.isGrounded && Input.GetButtonDown("attack"))
+        {
+            stops = true;
+            _animator.SetTrigger("doattack");
+            atc = true;
         }
     }
     

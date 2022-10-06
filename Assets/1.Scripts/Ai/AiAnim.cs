@@ -29,16 +29,13 @@ public class AiAnim : MonoBehaviour
 
     public void humango()
     {
-        if(Questmanager.count == 1 || Questmanager.count == 2)
+        if(Questmanager.count == 1)
         {
             Questmanager.count++;
-        }
-        else if(Questmanager.count == 3)
-        {
             stress.Stress -= 5.0f;
             Questmanager.countquest();
         }
-
+        
         for(int i = 0; i < corgiround.peopleList.Count; i++)
         {
             corgiround.agent[i].speed = 1.8f;

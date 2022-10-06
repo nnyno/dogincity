@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Corgicollder : MonoBehaviour
 {
     public PlayerMovement pm = null;
-    public GameObject nearObject;
+    public Controller ctroll = null;
+    public GameObject nearObject, maps;
+    public Vector3 createmap;
     public int nearfood;
     public bool park = false;
     public bool market = false;
     public bool printflyers = false;
     public bool home = false;
     public bool badfoods = false;
+    public int countdogmaps = 0;
 
     void OnTriggerStay(Collider other) 
     {
@@ -172,6 +176,40 @@ public class Corgicollder : MonoBehaviour
             nearfood = 26;
             nearObject = other.gameObject;
         }
+        else if(other.tag == "dog")
+        {
+            if(pm.atc == true && countdogmaps == 0)
+            {
+                pm.atc = false;
+                ctroll._animator.SetLayerWeight(1, 0.0f);
+                other.GetComponent<Animator>().SetTrigger("dohit");
+                other.GetComponent<NavMeshAgent>().speed = 0.0f;
+                if(ctroll.clone1 == true && other.gameObject.name == "Corgi_clone1")
+                {
+                    dogmapcreate();
+                }
+                if(ctroll.clone2 == true && other.gameObject.name == "Corgi_clone2")
+                {
+                    dogmapcreate();
+                }
+                if(ctroll.clone3 == true && other.gameObject.name == "Corgi_clone3")
+                {
+                    dogmapcreate();
+                }
+                if(ctroll.clone4 == true && other.gameObject.name == "Corgi_clone4")
+                {
+                    dogmapcreate();
+                }
+            }
+        }
+    }
+
+    void dogmapcreate()
+    {
+        createmap = ctroll.clone[ctroll.cnt].transform.TransformPoint(new Vector3(0.3f, 0.0f, 0.0f));
+        Instantiate(maps, createmap, Quaternion.identity);
+        Destroy(ctroll.maps[ctroll.cnt]);
+        countdogmaps++;
     }
 
     void OnTriggerExit(Collider other)

@@ -12,6 +12,7 @@ public class corgiround : MonoBehaviour
     public Vector3 createmap;
     public GameObject maps;
     public int permap, mapcount = 0;
+    public int trashmapscount = 0;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class corgiround : MonoBehaviour
                 permap = Random.Range(0, 25);
                 if(permap == 0)
                 {
-                    if(mapcount == 0)
+                    if(mapcount == 0 || mapcount == 1)
                     {
                         createmap = peopleList[i].transform.TransformPoint(new Vector3(0.3f, 1.0f, 0.25f));
                         Invoke("instantiatemap", 0.4f);
