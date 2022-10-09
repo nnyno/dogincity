@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sight : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Sight : MonoBehaviour
     public colli colli = null;
     public float catcherspeed = 0.005f;
     public difficulty diff;
-
+    public Image chaseline; //추적당할 시 테두리
     void Start()
     {
         diff = GameObject.Find("CorgiCollder").GetComponent<difficulty>();
@@ -36,11 +37,16 @@ public class Sight : MonoBehaviour
                 float view = Vector3.Dot(N_vectorBetween, transform.forward);
                 if(view > 0.4)
                 {
+                    chaseline.enabled = true; //추적당할 시 테두리
                     m_enemy.SetTarget(t_tfPlayer);////////
                     transform.LookAt(t_tfPlayer);//player 바라보기
                     transform.position = Vector3.Lerp(transform.position, t_tfPlayer.position, catcherspeed);
                     colli.waypoints = true;
                 }
+            }
+            else
+            {
+                chaseline.enabled = false; //추적당할 시 테두리
             }
         }
         else
