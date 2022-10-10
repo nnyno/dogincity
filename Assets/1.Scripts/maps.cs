@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class maps : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class maps : MonoBehaviour
     public GameObject hometag;
     public int mapscount = 0;
     int i;
+
+
 
     void Update()
     {
@@ -27,5 +30,7 @@ public class maps : MonoBehaviour
                 }
             }
         }
+        
     }
+
 }

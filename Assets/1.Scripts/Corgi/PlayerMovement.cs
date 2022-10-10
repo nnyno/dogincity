@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip eatSfx;
     public AudioClip barkSfx;
 
+
     public GameObject eatEffect;
 
     public CameraMovement cameraMovement;
@@ -24,11 +25,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject[] Images;
     public GameObject CreatePoint;
     public Text mapscounts;
+    public GameObject mapimage;
+    
 
     public int mapscount = 0;
 
     Camera _camera;
     Animator _animator;
+    Animator _animator2;
     public CharacterController _controller;
     [Range(0, 50)]
     public float speed = 5f;
@@ -82,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         _controller = this.GetComponent<CharacterController>();
         cameraMovement = GameObject.Find("Cameras").GetComponent<CameraMovement>();
         hungerController = GameObject.Find("Corgi_RM").GetComponent<HungerController>();
+        _animator2 = mapimage.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -224,6 +229,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 stops = true;
                 _animator.SetTrigger("doBite");
+                Invoke("action" , 1);
             }
         }
         else if(_controller.isGrounded && Input.GetButtonDown("bite") && nearObject == null && bites == false && foodIndexs == -1)
@@ -236,6 +242,11 @@ public class PlayerMovement : MonoBehaviour
             bites = false;
             _animator.SetLayerWeight(1, 0f);
         }
+    }
+
+    void action()
+    {
+        _animator2.SetTrigger("scale");
     }
 
     void putdown()
