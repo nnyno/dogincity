@@ -7,7 +7,7 @@ public class skip : MonoBehaviour
 {
     public PlayableDirector _introCutscene = null;
     private double _introSkipTime = 26.0f;
-    public GameObject obj1, obj2;
+    public GameObject obj1, obj2, obj3;
 
     void Start()
     {
@@ -21,6 +21,7 @@ public class skip : MonoBehaviour
             _introCutscene.time = _introSkipTime;
             Destroy(obj1);
             Destroy(obj2);
+            Destroy(obj3);
         }
     }
 }
