@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource mySfx;
     public AudioClip eatSfx;
     public AudioClip barkSfx;
+    AudioSource audioSource;
+    public AudioClip mapspick;
 
 
     public GameObject eatEffect;
@@ -230,6 +232,7 @@ public class PlayerMovement : MonoBehaviour
                 stops = true;
                 _animator.SetTrigger("doBite");
                 Invoke("action" , 1);
+
             }
         }
         else if(_controller.isGrounded && Input.GetButtonDown("bite") && nearObject == null && bites == false && foodIndexs == -1)
@@ -247,6 +250,9 @@ public class PlayerMovement : MonoBehaviour
     void action()
     {
         _animator2.SetTrigger("scale");
+        audioSource = mapimage.gameObject.GetComponent<AudioSource>();
+        audioSource.Play();
+
     }
 
     void putdown()
