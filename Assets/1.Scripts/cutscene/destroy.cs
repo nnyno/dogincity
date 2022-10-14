@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class destroy : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, 26.0f);

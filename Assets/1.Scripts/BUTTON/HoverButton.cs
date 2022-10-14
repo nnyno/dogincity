@@ -7,13 +7,11 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     public RectTransform Button;
 
-    // Start is called before the first frame update
     void Start()
     {
         Button.GetComponent<Animator>().Play("Hover Off");    
     }
 
-    // Update is called once per frame
     public void OnPointerEnter(PointerEventData eventData)
     {
         Button.GetComponent<Animator>().Play("Hover On");

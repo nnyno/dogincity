@@ -22,6 +22,11 @@ public class difficulty : MonoBehaviour
 
     void Update()
     {
+        if(difscore >= 5)
+        {
+            difscore = 5.0f;
+        }
+
         if(difscore > 1)
         {
             difscore -= Time.deltaTime / 1000.0f;

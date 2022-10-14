@@ -12,8 +12,6 @@ public class maps : MonoBehaviour
     public int mapscount = 0;
     int i;
 
-
-
     void Update()
     {
         mapscount = pm.mapscount;
@@ -30,7 +28,5 @@ public class maps : MonoBehaviour
                 }
             }
         }
-        
     }
-
 }

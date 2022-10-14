@@ -5,14 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class homecutscene : MonoBehaviour
 {
-
     void Start()
     {
         SceneManager.LoadScene("homecut", LoadSceneMode.Additive);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Random_market : MonoBehaviour
 {
-    private int count;//
-    private int count2;// 
+    private int count;
+    private int count2;
     public Transform[] spawnPosArray;
     public GameObject slicedMap;
 
-    // Start is called before the first frame update
     void Start()
     {
         count = Random.Range(0, 10);//
@@ -27,6 +26,5 @@ public class Random_market : MonoBehaviour
                 count2 = Random.Range(0, 10);
             }
         }
-
     }
 }
