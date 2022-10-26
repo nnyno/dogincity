@@ -6,7 +6,7 @@ public class waynocoll : MonoBehaviour
 {
     public EnemyAI enemyai = null;
     public colli colli = null;
-    public GameObject no1 = null, no2 = null, no3 = null, no4 = null;
+    public GameObject no1 = null, no2 = null, no3 = null, no4 = null, no5 = null, no6 = null, no7 = null, no8 = null;
     public GameObject wayno;
 
     public void OnTriggerStay(Collider other) {
@@ -32,9 +32,25 @@ public class waynocoll : MonoBehaviour
                     {
                         enemyai.m_count = 2;
                     }
-                    else
+                    else if (wayno == no4)
                     {
                         enemyai.m_count = 3;
+                    }
+                    else if (wayno == no5)
+                    {
+                        enemyai.m_count = 4;
+                    }
+                    else if (wayno == no6)
+                    {
+                        enemyai.m_count = 5;
+                    }
+                    else if (wayno == no7)
+                    {
+                        enemyai.m_count = 6;
+                    }
+                    else
+                    {
+                        enemyai.m_count = 7;
                     }
                 }
             }

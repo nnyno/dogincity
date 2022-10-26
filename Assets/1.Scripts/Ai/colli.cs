@@ -5,11 +5,20 @@ using UnityEngine;
 public class colli : MonoBehaviour
 {
     public bool waypoints = true;
+    public bool once = false; // 추가한거
     void OnTriggerEnter(Collider other) 
     {
-        if(other.gameObject.CompareTag("waypoint"))
+        if (once == false) //추가한거
         {
-            waypoints = true;
+            if (other.gameObject.CompareTag("waypoint"))
+            {
+                waypoints = true;
+                once = true; //추가한거
+            }
+        }
+        else //else문 다 추가한거
+        {
+            once = false;
         }
     }
 }
