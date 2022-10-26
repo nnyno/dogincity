@@ -16,7 +16,11 @@ public class colli : MonoBehaviour
                 once = true; //추가한거
             }
         }
-        else //else문 다 추가한거
+    }
+
+    void Update()
+    {
+        if(once == true) //else문 다 추가한거
         {
             once = false;
         }
