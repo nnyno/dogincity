@@ -60,23 +60,23 @@ public class Sight : MonoBehaviour
         View();
         if(diff.score == 1)
         {
-            catcherspeed = 0.01f;
+            catcherspeed = 0.006f;
         }
         else if(diff.score == 2)
         {
-            catcherspeed = 0.02f;
+            catcherspeed = 0.008f;
         }
         else if(diff.score == 3)
         {
-            catcherspeed = 0.03f;
+            catcherspeed = 0.01f;
         }
         else if(diff.score == 4)
         {
-            catcherspeed = 0.35f;
+            catcherspeed = 0.012f;
         }
         else if(diff.score == 5)
         {
-            catcherspeed = 0.045f;
+            catcherspeed = 0.014f;
         }
     }
 }
