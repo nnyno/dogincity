@@ -18,11 +18,15 @@ public class colli : MonoBehaviour
         }
     }
 
-    void Update()
+    void OnTriggerExit(Collider other) 
     {
         if(once == true) //else문 다 추가한거
         {
-            once = false;
+            if (other.gameObject.CompareTag("waypoint"))
+            {
+                once = false;
+                
+            }
         }
     }
 }
