@@ -33,10 +33,9 @@ public class EnemyAI : MonoBehaviour
     //다음정찰지역으로 이동시켜주는 함수
     void MoveToNextWayPoint() 
     {
-
         if (colli.waypoints == true)//속도가 0이된다 == 추적이 끝난다.
         {
-            colli.waypoints = false;       
+            colli.waypoints = false;
             m_enemy.SetDestination(m_tfWayPoints[m_count++].position); //순찰 목적지를 계속해서바꿔줌
             if (m_count >= m_tfWayPoints.Length) //웨이포인트가 최대치에 도달시
                 m_count = 0; //처음 웨이포인트로 초기화

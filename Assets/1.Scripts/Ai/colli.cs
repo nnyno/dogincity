@@ -6,7 +6,7 @@ public class colli : MonoBehaviour
 {
     public bool waypoints = true;
     public bool once = false; // 추가한거
-    void OnTriggerEnter(Collider other) 
+    void OnTriggerEnter(Collider other)
     {
         if (once == false) //추가한거
         {
@@ -18,14 +18,14 @@ public class colli : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other) 
+    void OnTriggerExit(Collider other)
     {
-        if(once == true) //else문 다 추가한거
+        if (once == true) //else문 다 추가한거
         {
             if (other.gameObject.CompareTag("waypoint"))
             {
                 once = false;
-                
+
             }
         }
     }
