@@ -429,7 +429,6 @@ Transform:
   m_Children:
   - {fileID: 400002}
   - {fileID: 400000}
-  - {fileID: 6517570742360159272}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -497,71 +496,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &6969905022911576222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6517570742360159272}
-  - component: {fileID: 3516326216748863647}
-  - component: {fileID: 1550365332641095138}
-  m_Layer: 0
-  m_Name: CreatePoint
-  m_TagString: trashbox
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6517570742360159272
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6969905022911576222}
-  m_LocalRotation: {x: 0.00000001545431, y: -0.7071068, z: 0.00000001545431, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0}
-  m_LocalScale: {x: 1.1999999, y: 1.1999999, z: 1.1999999}
-  m_Children: []
-  m_Father: {fileID: 400004}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3516326216748863647
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6969905022911576222}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.1, z: 0.75}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1550365332641095138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6969905022911576222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2961b2c2564ec641a5052af86264253, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  difficulty: {fileID: 0}
-  trashfood:
-  - {fileID: 6154572499757213433, guid: c5765dd5f73cdca46be4e33622da626a, type: 3}
-  - {fileID: 4447122799925423128, guid: fd6d1f868fd8b734281adb9cdccb77e6, type: 3}
-  - {fileID: 5787748056720042471, guid: f55b8ba5b419dbb4fa08da1f09c8c603, type: 3}
-  - {fileID: 4742677154014660025, guid: b375b9049e9073e469ba6237659d5cb3, type: 3}
-  - {fileID: 6559429067316052213, guid: dd20c74d0f2a507419dc363f3271df77, type: 3}
-  - {fileID: 6873265931857744404, guid: 333ab454d4737c04eb0afc6f8dd5a96a, type: 3}
-  trashfoodIndexs: -1
-  trashran: 0
-  CreatePoint: {fileID: 6969905022911576222}
