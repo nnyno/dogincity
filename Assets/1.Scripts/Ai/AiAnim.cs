@@ -31,8 +31,7 @@ public class AiAnim : MonoBehaviour
     {
         if(Questmanager.count == 1)
         {
-            Questmanager.count++;
-            stress.Stress -= 5.0f;
+            stress.Stress -= 20.0f;
             Questmanager.countquest();
         }
         

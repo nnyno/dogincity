@@ -28,7 +28,7 @@ public class trashbox : MonoBehaviour
                 Instantiate(trashfood[trashfoodIndexs], CreatePoint.transform.position, Quaternion.identity);
             }
             difficulty.difscore += 0.2f;
-            if(UnityEngine.Random.Range(0, 2) == 1)
+            if(UnityEngine.Random.Range(0, 5) == 1)
             {
                 if(corgiround.trashmapscount == 0 || corgiround.trashmapscount == 1)
                 {

@@ -9,7 +9,10 @@ public class Questmanager : MonoBehaviour
     public difficulty difficulty = null;
     public PlayerMovement PlayerMovement;
     public Corgicollder Corgicollder;
+    public corgiround corgiround;
+    public colors gray;
     public Text questtext1, questtext2;
+    public Text dfin1, hfin2, tfin3;
     public int count = 0;
     public int questdelayTime = 1;
     public bool questdelay = false;
@@ -19,6 +22,8 @@ public class Questmanager : MonoBehaviour
     {
         PlayerMovement = GameObject.Find("Corgi_RM").GetComponent<PlayerMovement>();
         Corgicollder = GameObject.Find("CorgiCollder").GetComponent<Corgicollder>();
+        corgiround = GameObject.Find("CorgiCollder").GetComponent<corgiround>();
+        gray = GameObject.Find("graycolor").GetComponent<colors>();
     }
 
     void Update()
@@ -32,9 +37,26 @@ public class Questmanager : MonoBehaviour
             {
                 questtext2.text = questtext1.text;
             }
-            else
+            else if(count == 3 && stress.Stress == 0.0f)
             {
-                questtext2.text = "힌트 : 쓰레기통, 사람, 시장, 공원, 강아지";
+                questtext2.text = "힌트 :                                    ";
+            }
+            else if(count == 3 && stress.Stress != 0.0f)
+            {
+                questtext2.text = "스트레스가 너무 높아요";
+            }
+
+            if(corgiround.trashmapscount == 2)
+            {
+                tfin3.color = gray.grays;
+            }
+            if(corgiround.mapcount == 2)
+            {
+                hfin2.color = gray.grays;
+            }
+            if(Corgicollder.countdogmaps == 1)
+            {
+                dfin1.color = gray.grays;
             }
         }
     }
@@ -74,7 +96,7 @@ public class Questmanager : MonoBehaviour
             stress.Stress -= 20.0f;
         }
         //count 1 aianim의 humango함수에서 증가
-        else if (Corgicollder.market == true && PlayerMovement.foodIndexs != -1 && Input.GetKeyDown(KeyCode.X))
+        else if (Corgicollder.market == true && PlayerMovement.foodIndexs != -1 && Input.GetKeyDown(KeyCode.C))
         {
             if(count == 2)
             { 

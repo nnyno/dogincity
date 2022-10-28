@@ -17,6 +17,9 @@ public class Corgicollder : MonoBehaviour
     public bool badfoods = false;
     public int countdogmaps = 0;
 
+    public AudioSource audiosource;
+    public AudioClip hitclip;
+
     void OnTriggerStay(Collider other) 
     {
 
@@ -178,25 +181,26 @@ public class Corgicollder : MonoBehaviour
         }
         else if(other.tag == "dog")
         {
-            if(pm.atc == true && countdogmaps == 0)
+            if(pm.atc == true)
             {
                 pm.atc = false;
+                audiosource.PlayOneShot(hitclip);
                 ctroll._animator.SetLayerWeight(1, 0.0f);
                 other.GetComponent<Animator>().SetTrigger("dohit");
                 other.GetComponent<NavMeshAgent>().speed = 0.0f;
-                if(ctroll.clone1 == true && other.gameObject.name == "Corgi_clone1")
+                if(ctroll.clone1 == true && other.gameObject.name == "Corgi_clone1" && countdogmaps == 0)
                 {
                     dogmapcreate();
                 }
-                if(ctroll.clone2 == true && other.gameObject.name == "Corgi_clone2")
+                if(ctroll.clone2 == true && other.gameObject.name == "Corgi_clone2" && countdogmaps == 0)
                 {
                     dogmapcreate();
                 }
-                if(ctroll.clone3 == true && other.gameObject.name == "Corgi_clone3")
+                if(ctroll.clone3 == true && other.gameObject.name == "Corgi_clone3" && countdogmaps == 0)
                 {
                     dogmapcreate();
                 }
-                if(ctroll.clone4 == true && other.gameObject.name == "Corgi_clone4")
+                if(ctroll.clone4 == true && other.gameObject.name == "Corgi_clone4" && countdogmaps == 0)
                 {
                     dogmapcreate();
                 }
