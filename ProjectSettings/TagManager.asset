@@ -53,6 +53,7 @@ TagManager:
   - trafficlights
   - maps
   - dog
+  - marketowner
   layers:
   - Default
   - TransparentFX

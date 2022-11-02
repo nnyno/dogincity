@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public AudioSource mySfx;
+    public AudioSource mySfx, bgm;
     public AudioClip eatSfx;
     public AudioClip barkSfx;
     AudioSource audioSource;

@@ -66,7 +66,7 @@ public class HealthController : MonoBehaviour
         {
             if(PlayerHealth == 0)
             {
-                LoadingSceneManager.LoadScene("interface");
+                LoadingSceneManager.LoadScene("gmaeover");
             } 
         }
 

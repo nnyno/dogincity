@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Questmanager : MonoBehaviour
 {
+    public AudioClip questclear;
     public stress stress = null;
     public difficulty difficulty = null;
     public PlayerMovement PlayerMovement;
@@ -112,6 +113,7 @@ public class Questmanager : MonoBehaviour
 
     public void countquest()
     {
+        PlayerMovement.mySfx.PlayOneShot(questclear);
         count++;
         questdelay = true;
         questtext1.text = "";

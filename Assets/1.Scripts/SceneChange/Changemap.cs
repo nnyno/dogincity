@@ -13,7 +13,7 @@ public class Changemap : MonoBehaviour
     {
         if (collider.gameObject.name == "Simple_Door")
         {
-            LoadingSceneManager.LoadScene("SampleScene");
+            LoadingSceneManager.LoadScene("startscene");
         }
     }
 }
