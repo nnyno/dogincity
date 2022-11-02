@@ -44,8 +44,9 @@ public class Sight : MonoBehaviour
                     chaseline.enabled = true; //추적당할 시 테두리
                     m_enemy.SetTarget(t_tfPlayer);////////
                     transform.LookAt(t_tfPlayer);//player 바라보기
-                    transform.position = Vector3.Lerp(transform.position, t_tfPlayer.position, catcherspeed);
-                    _animator.SetFloat("Blend", catcherspeed * 80.0f, 0.1f, Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, t_tfPlayer.position, catcherspeed);//어떤위치로 이동+속도
+                    
+                    _animator.SetFloat("Blend", catcherspeed * 12.0f, 0.1f, Time.deltaTime);
                     colli.waypoints = true;
                 }
             }
@@ -65,23 +66,23 @@ public class Sight : MonoBehaviour
         View();
         if(diff.score == 1)
         {
-            catcherspeed = 0.01f;
+            catcherspeed = 0.08f;
         }
         else if(diff.score == 2)
         {
-            catcherspeed = 0.012f;
+            catcherspeed = 0.09f;
         }
         else if(diff.score == 3)
         {
-            catcherspeed = 0.014f;
+            catcherspeed = 0.11f;
         }
         else if(diff.score == 4)
         {
-            catcherspeed = 0.016f;
+            catcherspeed = 0.13f;
         }
         else if(diff.score == 5)
         {
-            catcherspeed = 0.02f;
+            catcherspeed = 0.15f;
         }
     }
 }
