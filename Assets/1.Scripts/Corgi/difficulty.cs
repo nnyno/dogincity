@@ -22,9 +22,9 @@ public class difficulty : MonoBehaviour
 
     void Update()
     {
-        if(difscore >= 5)
+        if(difscore >= 6)
         {
-            difscore = 5.0f;
+            difscore = 6.0f;
         }
 
         if(difscore > 1)

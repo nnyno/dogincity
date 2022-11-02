@@ -13,9 +13,13 @@ public class Sight : MonoBehaviour
     public float catcherspeed = 0.005f;
     public difficulty diff;
     public Image chaseline; //추적당할 시 테두리
+    Animator _animator;
+
+
     void Start()
     {
         diff = GameObject.Find("CorgiCollder").GetComponent<difficulty>();
+        _animator = this.GetComponent<Animator>();
     }
 
     void View()
@@ -41,6 +45,7 @@ public class Sight : MonoBehaviour
                     m_enemy.SetTarget(t_tfPlayer);////////
                     transform.LookAt(t_tfPlayer);//player 바라보기
                     transform.position = Vector3.Lerp(transform.position, t_tfPlayer.position, catcherspeed);
+                    _animator.SetFloat("Blend", catcherspeed * 80.0f, 0.1f, Time.deltaTime);
                     colli.waypoints = true;
                 }
             }

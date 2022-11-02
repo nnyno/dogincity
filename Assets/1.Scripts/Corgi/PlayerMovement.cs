@@ -373,7 +373,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     spercent =  -0.5f;
                 }
-                else
+                else if(h == 0)
                 {
                     spercent = 0.0f;
                 }
