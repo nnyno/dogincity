@@ -48,7 +48,7 @@ public class waynocoll : MonoBehaviour
                     {
                         enemyai.m_count = 6;
                     }
-                    else
+                    else if (wayno == no8)
                     {
                         enemyai.m_count = 7;
                     }
