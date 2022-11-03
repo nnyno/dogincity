@@ -29,7 +29,7 @@ public class difficulty : MonoBehaviour
 
         if(difscore > 1)
         {
-            difscore -= Time.deltaTime / 50.0f;
+            difscore -= Time.deltaTime / 100.0f;
         }
         
         if(difscore >= 1)
