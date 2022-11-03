@@ -35,11 +35,11 @@ public class Sight : MonoBehaviour
             Vector3 vectorBetween = t_tfPlayer.position - transform.position;
             //Player와 Enemy사이의 벡터 크기를 구한다.
             float distance = Vector3.Magnitude(vectorBetween);
-            if (distance < 20) //** Player와 Enemy 사이의 거리가 15보다 작아졌을때 "추적시작"
+            if (distance < 18) //** Player와 Enemy 사이의 거리가 15보다 작아졌을때 "추적시작"
             {
                 Vector3 N_vectorBetween = vectorBetween.normalized;
                 float view = Vector3.Dot(N_vectorBetween, transform.forward);
-                if(view > 0.4)
+                if(view > 0.5)
                 {
                     chaseline.enabled = true; //추적당할 시 테두리
                     m_enemy.SetTarget(t_tfPlayer);////////

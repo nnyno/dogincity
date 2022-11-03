@@ -1745,7 +1745,7 @@ MonoBehaviour:
   _introCutscene: {fileID: 1815418551}
   obj1: {fileID: 0}
   obj2: {fileID: 0}
-  su: {fileID: 665306982}
+  obj3: {fileID: 0}
 --- !u!4 &1006762883
 Transform:
   m_ObjectHideFlags: 0
@@ -2256,6 +2256,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 120136543af42b24e8c4674e198a70fb, type: 3}
+--- !u!1 &1227069503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000012074550024, guid: 120136543af42b24e8c4674e198a70fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1227069502}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1227069504
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227069503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: da4fa3e6e850bc54a8a4c0b9b41b73a0, type: 3}
 --- !u!1001 &1232320723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2340,6 +2360,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f03674bfc8f1894c96e1ddc1d1b6d63, type: 3}
+--- !u!1 &1232320724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 7f03674bfc8f1894c96e1ddc1d1b6d63,
+    type: 3}
+  m_PrefabInstance: {fileID: 1232320723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1232320725
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232320724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2124705421725058983, guid: 7f03674bfc8f1894c96e1ddc1d1b6d63, type: 3}
 --- !u!1 &1304136339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013811217906, guid: 120136543af42b24e8c4674e198a70fb,
@@ -2652,6 +2692,8 @@ PlayableDirector:
     value: {fileID: 2006595822}
   - key: {fileID: 7411701105676191694, guid: 3529e886cf799ab4b9d932750e15319a, type: 2}
     value: {fileID: 433790685}
+  - key: {fileID: -7195903682822107052, guid: 3529e886cf799ab4b9d932750e15319a, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - d6810fc98d8a11c42ba461ce3e8084da: {fileID: 0}
