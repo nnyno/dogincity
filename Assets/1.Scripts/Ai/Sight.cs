@@ -35,7 +35,7 @@ public class Sight : MonoBehaviour
             Vector3 vectorBetween = t_tfPlayer.position - transform.position;
             //Player와 Enemy사이의 벡터 크기를 구한다.
             float distance = Vector3.Magnitude(vectorBetween);
-            if (distance < 15) //** Player와 Enemy 사이의 거리가 15보다 작아졌을때 "추적시작"
+            if (distance < 20) //** Player와 Enemy 사이의 거리가 15보다 작아졌을때 "추적시작"
             {
                 Vector3 N_vectorBetween = vectorBetween.normalized;
                 float view = Vector3.Dot(N_vectorBetween, transform.forward);
@@ -70,15 +70,15 @@ public class Sight : MonoBehaviour
         }
         else if(diff.score == 2)
         {
-            catcherspeed = 0.09f;
+            catcherspeed = 0.1f;
         }
         else if(diff.score == 3)
         {
-            catcherspeed = 0.11f;
+            catcherspeed = 0.12f;
         }
         else if(diff.score == 4)
         {
-            catcherspeed = 0.13f;
+            catcherspeed = 0.14f;
         }
         else if(diff.score == 5)
         {

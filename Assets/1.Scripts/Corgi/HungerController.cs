@@ -22,7 +22,7 @@ public class HungerController : MonoBehaviour
     void Update()
     {
         HungerSlider.value = Hunger;
-        Hunger -= 0.1f * Time.deltaTime;
+        Hunger -= 0.5f * Time.deltaTime;
         if(Hunger <= 0)
         {
             Hunger = 0;
@@ -38,7 +38,7 @@ public class HungerController : MonoBehaviour
     void eat3()
     {
         Hunger += 20;
-        stress.Stress -= 5.0f;
+        stress.Stress -= 10.0f;
         if(stress.Stress <= 0)
         {
             stress.Stress = 0;
