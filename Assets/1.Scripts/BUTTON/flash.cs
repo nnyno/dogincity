@@ -6,42 +6,31 @@ using UnityEngine.UI;
 public class flash : MonoBehaviour
 {
     public maps maps;
-    public Image imageGrid;
-    public GameObject mapbackground;
-    public bool mapon = false;
+    public GameObject flashobj;
 
     void Start()
     {
         maps = GameObject.Find("Map Group").GetComponent<maps>();
     }
 
-    void Update()
+    public void mapopen()
     {
         if(maps.mapscount == 9)
         {
-            if(mapbackground.gameObject.activeSelf == true)
+            while(true)
             {
-                if(mapon == false)
-                {
-                    StartCoroutine("EMarkerGrid");
-                }
-                mapon = true;
-            }
-            else
-            {
-                mapon = false;
+                Invoke("off", 0.5f);
+                Invoke("on", 0.5f);
             }
         }
 
     }
-    public IEnumerator EMarkerGrid()
+    void on()
+    { 
+        flashobj.SetActive(true);
+    }
+    void off()
     {
-        while(true)
-        {
-            this.imageGrid.gameObject.SetActive(false);
-            yield return new WaitForSecondsRealtime(0.5f);
-            this.imageGrid.gameObject.SetActive(true);
-            yield return new WaitForSecondsRealtime(0.5f);
-        }
+        flashobj.SetActive(false);
     }
 }

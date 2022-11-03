@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Questmanager : MonoBehaviour
 {
     public AudioClip questclear;
+    public GameObject lastquest;
     public stress stress = null;
     public difficulty difficulty = null;
     public PlayerMovement PlayerMovement;
@@ -41,6 +42,7 @@ public class Questmanager : MonoBehaviour
             else if(count == 3 && stress.Stress == 0.0f)
             {
                 questtext2.text = "힌트 :                                    ";
+                lastquest.SetActive(true);
             }
             else if(count == 3 && stress.Stress != 0.0f)
             {

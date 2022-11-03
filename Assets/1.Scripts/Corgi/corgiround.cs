@@ -28,7 +28,7 @@ public class corgiround : MonoBehaviour
                 difficulty.surprise = false;
                 agent[i].speed = 0.0f;
                 _animator[i].SetTrigger("surprised");
-                permap = Random.Range(0, 25);
+                permap = Random.Range(0, 5);
                 if(permap == 0)
                 {
                     if(mapcount == 0 || mapcount == 1)
