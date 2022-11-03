@@ -9,8 +9,14 @@ public class maps : MonoBehaviour
     public Questmanager qm = null;
     public GameObject[] mapspiece;
     public GameObject hometag;
+    public GameObject endingEffect;
     public int mapscount = 0;
     int i;
+
+    void Start()
+    {
+        endingEffect.SetActive(false);
+    }
 
     void Update()
     {
@@ -22,6 +28,7 @@ public class maps : MonoBehaviour
                 mapspiece[i].SetActive(true);
                 if(mapscount == 9)
                 {
+                    endingEffect.SetActive(true);
                     hometag.SetActive(true);
                     qm.home.enabled = false;
                     qm.home2.enabled = false;
