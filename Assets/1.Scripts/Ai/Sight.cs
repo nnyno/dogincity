@@ -9,6 +9,8 @@ public class Sight : MonoBehaviour
     [SerializeField] float m_distance = 0f;//시야 한계거리
     [SerializeField] LayerMask m_layerMask = 0;//타겟의 레이어검출
     [SerializeField] EnemyAI m_enemy = null;
+    public slide slide;
+    public float catcherslide = 0.08f;
     public colli colli = null;
     public float catcherspeed = 0.005f;
     public difficulty diff;
@@ -19,6 +21,7 @@ public class Sight : MonoBehaviour
     void Start()
     {
         diff = GameObject.Find("CorgiCollder").GetComponent<difficulty>();
+        slide = GameObject.Find("slide").GetComponent<slide>();
         _animator = this.GetComponent<Animator>();
     }
 
@@ -63,26 +66,27 @@ public class Sight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        catcherslide = slide.a/500.0f;
         View();
         if(diff.score == 1)
         {
-            catcherspeed = 0.08f;
+            catcherspeed = catcherslide;
         }
         else if(diff.score == 2)
         {
-            catcherspeed = 0.1f;
+            catcherspeed = catcherslide + 0.02f;
         }
         else if(diff.score == 3)
         {
-            catcherspeed = 0.12f;
+            catcherspeed = catcherslide + 0.04f;
         }
         else if(diff.score == 4)
         {
-            catcherspeed = 0.14f;
+            catcherspeed = catcherslide + 0.06f;
         }
         else if(diff.score == 5)
         {
-            catcherspeed = 0.15f;
+            catcherspeed = catcherslide + 0.07f;
         }
     }
 }
