@@ -2,9 +2,9 @@
 Casual Open World Game with Unity3D
 
 ## 환경
--OS: Windows 10
+- OS: Windows 10
 
--Tool: Unity 3D
+- Tool: Unity 3D
 
 ## 플레이 방법
 ![image](https://github.com/nnyno/dogincity/assets/86473590/0dc5e9a6-6fc0-41b6-830a-485b34c02a69)
